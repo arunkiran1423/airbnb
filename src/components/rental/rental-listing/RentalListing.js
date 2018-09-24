@@ -14,6 +14,7 @@ class RentalListing extends Component {
     return (
         <section id="rentalListing">
         <h1 className="page-title">Your Home All Around the World</h1>
+        debugger:
         <RentalList rentals={this.props.rentals} />
       </section>
  

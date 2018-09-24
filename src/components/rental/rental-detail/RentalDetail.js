@@ -7,7 +7,7 @@ import {fetchRentalById} from "../../../actions"
     componentWillMount() {
         //dispatch action
         const rentalId = this.props.match.params.id
-        this.props.dispatch(fetchRentalById(rentalId))
+        this.props.fetchRentalById(rentalId)
     }
 
   render() {
