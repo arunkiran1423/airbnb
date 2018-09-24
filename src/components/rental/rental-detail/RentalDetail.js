@@ -7,11 +7,12 @@ import {fetchRentalById} from "../../../actions"
     componentWillMount() {
         //dispatch action
         const rentalId = this.props.match.params.id
-        this.props.fetchRentalById(rentalId)
+        this.props.dispatch(fetchRentalById(rentalId))
     }
 
   render() {
     const rental = this.props.rental
+    if(rental._id){
     return (
       <div>
         <h1>{rental.title}</h1>
@@ -21,7 +22,12 @@ import {fetchRentalById} from "../../../actions"
       </div>
     )
   }
-}
+  else{
+    return(
+      <h1>Loading...</h1>
+    )
+  }
+}}
 
 function mapStateToProps(state){
     return{
