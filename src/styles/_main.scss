@@ -1,5 +1,10 @@
 @import 'variables.scss';
-
-body{
-    color: $main-color !important;
+@import "../styles/header";
+@import "../styles/rental/rental_listing";
+  
+.page-title{
+    font-size: 30px;
+    font-weight:700;
+    margin-botton:20px;
+   
 }
