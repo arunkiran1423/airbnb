@@ -2,16 +2,18 @@
   "name": "cli",
   "version": "0.1.0",
   "private": true,
-  "proxy":{
-    "api/v1/*":{
-      "target":"http://localhost:5000"
+  "proxy": {
+    "api/v1/*": {
+      "target": "http://localhost:5000"
     }
   },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
+    "camel-case": "^3.0.0",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "mongoose": "^5.2.17",
     "node-sass-chokidar": "^1.2.2",
@@ -19,11 +21,13 @@
     "popper": "^1.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "titleize": "^1.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar ./src -o ./src",

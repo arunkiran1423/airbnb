@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import {FETCH_RENTALS_SUCCESS, FETCH_RENTAL_BY_ID_SUCCESS} from "./types"
+import {FETCH_RENTALS_SUCCESS, FETCH_RENTAL_BY_ID_SUCCESS,FETCH_RENTAL_BY_INIT} from "./types"
 
 
 
@@ -18,6 +18,12 @@ const fetchRentalByIdSuccess = rental =>{
     }
 }
 
+const fetchRentalByInit=()=>{
+    return{
+        type:FETCH_RENTAL_BY_INIT
+    }
+}
+
 
    export const fetchRentals=()=>{
        return dispatch=>{
@@ -31,8 +37,9 @@ const fetchRentalByIdSuccess = rental =>{
 
    export const fetchRentalById=(rentalId)=>{
     //server call
-    return function(dispatch){
-        axios.get("/api/v1/rentals/:id")
+    return dispatch=>{
+        dispatch(fetchRentalByInit())
+        axios.get(`/api/v1/rentals/${rentalId}`)
         .then(res=>res.data)
         .then(rental =>dispatch(fetchRentalByIdSuccess(rental)))
 
