@@ -7,10 +7,10 @@ const FakeDb = require("./fake-db")
 const rentalRoutes = require("./routes/rentals")
 mongoose.connect(config.DB_URI)
 
-.then(db=>{
+.then(async db=>{
     const fakeDb = new FakeDb()
-    fakeDb.cleanDb()
-    fakeDb.pushrentalsToDb()})
+    await fakeDb.cleanDb()
+    await fakeDb.pushrentalsToDb()})
 .catch(err=>console.log(err))
 
 const app = express()
